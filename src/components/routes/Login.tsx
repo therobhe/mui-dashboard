@@ -1,4 +1,4 @@
-import { useRedirectIfLoggedIn } from "../hooks/useRedirect.ts"
+import { useRedirectIfLoggedIn } from "../hooks/useRedirect.ts";
 import { LoginForm } from "../ui/LoginForm.tsx";
 
 /**
@@ -9,7 +9,9 @@ import { LoginForm } from "../ui/LoginForm.tsx";
  * @returns JSX.Element - Login page component
  */
 export function Login() {
-	useRedirectIfLoggedIn("/dashboard")
+	const checking = useRedirectIfLoggedIn("/dashboard");
+	
+	if (checking) return null;
 	
 	return (
 		<LoginForm />

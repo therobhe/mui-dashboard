@@ -2,10 +2,11 @@ import { useAuth } from "../hooks/useAuth.ts";
 import { AccessDenied } from "./AccessDenied.tsx";
 
 export function Dashboard() {
-	const { isLoggedIn } = useAuth()
+	const { isLoggedIn } = useAuth();
+	console.log("isLoggedIn in Dashboard", isLoggedIn);
 	
 	if (!isLoggedIn) {
-		return <AccessDenied />
+		return <AccessDenied />;
 	}
 	
 	return (

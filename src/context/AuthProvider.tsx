@@ -15,7 +15,7 @@ type AuthProviderProps = {
  * @returns {JSX.Element} The `AuthProvider` component wrapping its children with the `AuthContext.Provider`.
  */
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [isLoggedIn, setIsLoggedIn] = useState(() => localStorage.getItem("isLoggedIn") === "true");
 	
 	/**
 	 * Logs the user in by setting the `isLoggedIn` state to `true`.
@@ -24,7 +24,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 	const loginFn = () => {
 		console.log("LOGGING IN");
 		setIsLoggedIn(true);
-	}
+		localStorage.setItem("isLoggedIn", "true");
+	};
 	
 	/**
 	 * Logs the user out by setting the `isLoggedIn` state to `false`.
@@ -33,18 +34,19 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 	const logoutFn = () => {
 		console.log("LOGGING OUT");
 		setIsLoggedIn(false);
-	}
+		localStorage.setItem("isLoggedIn", "false");
+	};
 	
 	// The authentication context value containing the current login state and authentication methods.
 	const authCtx = {
 		isLoggedIn: isLoggedIn,
 		login: loginFn,
 		logout: logoutFn,
-	}
+	};
 	
 	return (
 		<AuthContext.Provider value={authCtx}>
 			{children}
 		</AuthContext.Provider>
 	);
-}
+};

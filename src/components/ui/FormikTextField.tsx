@@ -21,5 +21,5 @@ export function FormikTextField({ name, label, ...props }: FormikTextFieldProps)
 			error={Boolean(nameFieldMeta.touched && nameFieldMeta.error)}
 			helperText={nameFieldMeta.touched && nameFieldMeta.error ? nameFieldMeta.error : ""}
 		/>
-	)
+	);
 }

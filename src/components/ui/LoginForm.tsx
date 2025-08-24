@@ -15,7 +15,7 @@ const initialFormValues: FormValues<string> = {
 	username: "",
 	password: "",
 	confirmPassword: ""
-}
+};
 
 const validationSchema = Yup.object().shape({
 	username: Yup.string().min(3).required("Username is required"),
@@ -23,7 +23,7 @@ const validationSchema = Yup.object().shape({
 	confirmPassword: Yup.string()
 	.oneOf([Yup.ref("password")], "Passwords must match")
 	.required("Confirm is required")
-})
+});
 
 
 export function LoginForm() {
@@ -33,7 +33,7 @@ export function LoginForm() {
 		<LoginFormLayout>
 			<Formik initialValues={initialFormValues}
 			        onSubmit={(values) => {
-				        console.log(values);
+				        localStorage.setItem("loginFormValues", JSON.stringify(values));
 				        login();
 			        }}
 			        validationSchema={validationSchema}>
@@ -58,5 +58,5 @@ export function LoginForm() {
 				</Form>
 			</Formik>
 		</LoginFormLayout>
-	)
+	);
 }
