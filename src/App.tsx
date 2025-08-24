@@ -6,25 +6,25 @@ import { Dashboard } from './components/routes/Dashboard.tsx';
 import { ErrorPage } from './components/routes/Error.tsx';
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <RouteWrapper />,
-        errorElement: <ErrorPage />,
-        children: [
-            {
-                index: true,
-                element: <Login />
-            },
-            {
-                path: "/dashboard",
-                element: <Dashboard />
-            }
-        ]
-    }
+	{
+		path: "/",
+		element: <RouteWrapper/>,
+		errorElement: <ErrorPage/>,
+		children: [
+			{
+				index: true,
+				element: <Login/>
+			},
+			{
+				path: "/dashboard",
+				element: <Dashboard/>
+			}
+		]
+	}
 ])
 
 function App() {
-    return <RouterProvider router={router} />
+	return <RouterProvider router={router}/>
 }
 
 export default App
