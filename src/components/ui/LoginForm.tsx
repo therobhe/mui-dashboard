@@ -34,8 +34,8 @@ const validationSchema = Yup.object().shape({
 	username: Yup.string().min(3).required("Username is required"),
 	password: Yup.string().min(6).required("Password is required"),
 	confirmPassword: Yup.string()
-	.oneOf([Yup.ref("password")], "Passwords must match")
-	.required("Confirm is required")
+		.oneOf([Yup.ref("password")], "Passwords must match")
+		.required("Confirm is required")
 });
 
 /**
@@ -50,7 +50,7 @@ const validationSchema = Yup.object().shape({
  */
 export function LoginForm() {
 	const { login } = useAuth(); // Retrieves the login function from the authentication context.
-	
+
 	return (
 		<LoginFormLayout>
 			<Formik
@@ -66,14 +66,14 @@ export function LoginForm() {
 					<Grid container spacing={4} sx={{ marginBottom: "2rem" }}>
 						{/* Username field */}
 						<Grid size={{ xs: 12 }}>
-							<FormikTextField name="username" variant="standard" fullWidth />
+							<FormikTextField name="username" label="Username" variant="standard" fullWidth />
 						</Grid>
-						
+
 						{/* Password field */}
 						<Grid size={{ xs: 6 }}>
-							<FormikTextField name="password" variant="standard" fullWidth />
+							<FormikTextField name="password" label="Password" variant="standard" fullWidth />
 						</Grid>
-						
+
 						{/* Confirm password field */}
 						<Grid size={{ xs: 6 }}>
 							<FormikTextField

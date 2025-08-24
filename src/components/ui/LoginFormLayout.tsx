@@ -1,6 +1,10 @@
 import { Box, Card, CardContent, Container, Grid, Typography } from "@mui/material";
 
-export function LoginFormLayout({ children }: React.ReactNode) {
+type LoginFromLayoutProps = {
+	children: React.ReactNode
+}
+
+export function LoginFormLayout({ children }: LoginFromLayoutProps) {
 	return (
 		<Box sx={{ marginTop: 4 }}>
 			<Container maxWidth={"sm"}>
@@ -16,7 +20,7 @@ export function LoginFormLayout({ children }: React.ReactNode) {
 						>
 							<CardContent>
 								<Typography variant="h2" gutterBottom
-								            sx={{ color: 'text.secondary', fontSize: "32px", fontWeight: "bold" }}>
+									sx={{ color: 'text.secondary', fontSize: "32px", fontWeight: "bold" }}>
 									Login
 								</Typography>
 								{children}

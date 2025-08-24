@@ -25,7 +25,7 @@ type FormikTextFieldProps = TextFieldProps & {
  */
 export function FormikTextField({ name, label, ...props }: FormikTextFieldProps) {
 	const [nameField, nameFieldMeta] = useField(name); // Connects the field to Formik's state.
-	
+
 	return (
 		<TextField
 			{...props} // Passes additional props to the TextField.
@@ -33,7 +33,7 @@ export function FormikTextField({ name, label, ...props }: FormikTextFieldProps)
 			id={name} // Sets the id of the field.
 			name={name} // Sets the name of the field.
 			type="text" // Sets the input type to text.
-			label={label || ( name[0].toUpperCase() + name.slice(1) )} // Uses the provided label or defaults to a capitalized name.
+			label={label || (name[0].toUpperCase() + name.slice(1))} // Uses the provided label or defaults to a capitalized name.
 			error={Boolean(nameFieldMeta.touched && nameFieldMeta.error)} // Displays an error if the field is touched and has an error.
 			helperText={nameFieldMeta.touched && nameFieldMeta.error ? nameFieldMeta.error : ""} // Shows the error message if applicable.
 		/>
