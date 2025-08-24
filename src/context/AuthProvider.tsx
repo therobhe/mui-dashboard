@@ -15,7 +15,7 @@ type AuthProviderProps = {
  * @returns {JSX.Element} The `AuthProvider` component wrapping its children with the `AuthContext.Provider`.
  */
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-	const [isLoggedIn, setIsLoggedIn] = useState(true);
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	
 	/**
 	 * Logs the user in by setting the `isLoggedIn` state to `true`.
