@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { AuthContext } from "./AuthContext.ts";
 
 type AuthProviderProps = {
@@ -16,7 +15,7 @@ type AuthProviderProps = {
  * @returns {JSX.Element} The `AuthProvider` component wrapping its children with the `AuthContext.Provider`.
  */
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [isLoggedIn, setIsLoggedIn] = useState(true);
 	
 	/**
 	 * Logs the user in by setting the `isLoggedIn` state to `true`.

@@ -1,4 +1,4 @@
-import { useAuth } from "../hooks/useAuth.ts";
+import { useRedirectIfLoggedIn } from "../hooks/useRedirect.ts"
 
 /**
  * login form with Formik and Yup to mock a "boundary" before accessing the dashboard
@@ -8,9 +8,7 @@ import { useAuth } from "../hooks/useAuth.ts";
  * @returns JSX.Element - Login page component
  */
 export function Login() {
-	const { isLoggedIn } = useAuth();
-	
-	console.log("Current login state from context: ", isLoggedIn);
+	useRedirectIfLoggedIn("/dashboard")
 	
 	return (
 		<div>
