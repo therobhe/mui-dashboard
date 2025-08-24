@@ -1,8 +1,8 @@
 import styles from './HeaderNavigation.module.css';
+import { useAuth } from "../hooks/useAuth.ts";
 
 export function HeaderNavigation() {
-	// Todo: Fetch the state from the local storage or context after it has changed
-	const isLoggedIn = false;
+	const { isLoggedIn } = useAuth();
 	
 	return (
 		<header className={styles.header}>
