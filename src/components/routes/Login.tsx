@@ -1,4 +1,5 @@
 import { useRedirectIfLoggedIn } from "../hooks/useRedirect.ts"
+import { LoginForm } from "../ui/LoginForm.tsx";
 
 /**
  * login form with Formik and Yup to mock a "boundary" before accessing the dashboard
@@ -11,8 +12,6 @@ export function Login() {
 	useRedirectIfLoggedIn("/dashboard")
 	
 	return (
-		<div>
-			<h2>Login Page</h2>
-		</div>
+		<LoginForm />
 	);
 }

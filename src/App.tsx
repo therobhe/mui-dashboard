@@ -8,16 +8,16 @@ import { AuthProvider } from "./context/AuthProvider.tsx";
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <RouteWrapper/>,
-		errorElement: <ErrorPage/>,
+		element: <RouteWrapper />,
+		errorElement: <ErrorPage />,
 		children: [
 			{
 				index: true,
-				element: <Login/>
+				element: <Login />
 			},
 			{
 				path: "/dashboard",
-				element: <Dashboard/>
+				element: <Dashboard />
 			}
 		]
 	}
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
 function App() {
 	return (
 		<AuthProvider>
-			<RouterProvider router={router}/>
+			<RouterProvider router={router} />
 		</AuthProvider>
 	)
 }

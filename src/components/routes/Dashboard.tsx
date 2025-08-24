@@ -5,7 +5,7 @@ export function Dashboard() {
 	const { isLoggedIn } = useAuth()
 	
 	if (!isLoggedIn) {
-		return <AccessDenied/>
+		return <AccessDenied />
 	}
 	
 	return (
