@@ -1,6 +1,6 @@
-import { AppBar, Avatar, Badge, InputBase, Menu, MenuItem, Typography } from "@mui/material";
+import { AppBar, Avatar, Badge, Box, InputBase, Menu, MenuItem, Typography } from "@mui/material";
 import { IconContainer, StyledSearch, StyledToolbar, UserBox } from "../StyledComponents.ts";
-import { Mail, Notifications, Pets } from "@mui/icons-material";
+import { ConnectWithoutContact, Mail, Notifications } from "@mui/icons-material";
 import { useState } from "react";
 import { useAuth } from "../../../hooks/useAuth.ts";
 import { useNavigate } from "react-router-dom";
@@ -15,10 +15,13 @@ export function Navbar() {
 	return (
 		<AppBar position="fixed">
 			<StyledToolbar>
-				<Typography variant={"h6"} sx={{ display: { xs: "none", sm: "block" } }}>
-					RobNet
-				</Typography>
-				<Pets sx={{ display: { xs: "block", sm: "none" } }} />
+				<Box onClick={() => navigate("/")}
+				     sx={{ cursor: "pointer" }}>
+					<Typography variant={"h6"} sx={{ display: { xs: "none", sm: "block" } }}>
+						RobNet
+					</Typography>
+					<ConnectWithoutContact sx={{ display: { xs: "block", sm: "none" } }} />
+				</Box>
 				<StyledSearch>
 					<InputBase placeholder="search..." />
 				</StyledSearch>
