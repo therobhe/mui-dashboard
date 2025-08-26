@@ -14,7 +14,7 @@ export function Dashboard() {
 	
 	return (
 		<Box>
-			<Stack direction="row" spacing={2} justifyContent={"space-between"}>
+			<Stack direction="row" justifyContent={"space-between"}>
 				<Sidebar></Sidebar>
 				<Feed></Feed>
 				<Rightbar></Rightbar>
