@@ -52,10 +52,10 @@ export function FeedPost({ postFromUser, postTitle, postText, hasImage }: FeedPo
 				</Typography>
 			</CardContent>
 			<CardActions disableSpacing>
-				<IconButton aria-lavel={"add to favs"}>
+				<IconButton aria-label={"add to favs"}>
 					<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite sx={{ color: "red" }} />} />
 				</IconButton>
-				<IconButton aria-lavel={"share with a contact"}>
+				<IconButton aria-label={"share with a contact"}>
 					<Share />
 				</IconButton>
 			</CardActions>

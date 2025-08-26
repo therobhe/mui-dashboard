@@ -1,10 +1,10 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { HeaderNavigation } from "../Navigation/HeaderNavigation";
+import { HeaderNavigation } from "../navigation/HeaderNavigation.tsx";
 import { AnimatePresence, motion } from "framer-motion";
 
 export function RouteWrapper() {
 	const location = useLocation();
-
+	
 	return (
 		<>
 			<HeaderNavigation />
@@ -22,5 +22,5 @@ export function RouteWrapper() {
 				</AnimatePresence>
 			</main>
 		</>
-	)
+	);
 }

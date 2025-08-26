@@ -3,7 +3,7 @@ import { FeedPost } from "./FeedPost.tsx";
 
 export function Feed() {
 	return (
-		<Box flex={4} p={2}>
+		<Box flex={4} p={2} sx={{ marginTop: "4rem" }}>
 			<Stack direction="column" spacing={1}>
 				<FeedPost postFromUser={"T"} postTitle={"Beautiful Scenery in Bavaria"}
 				          postText={"While travelling bavaria, you will encounter many beautiful sights like this one."}

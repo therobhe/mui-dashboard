@@ -7,23 +7,26 @@ export function Sidebar() {
 		<Box flex={1} p={2} sx={{
 			display: { xs: "none", sm: "block" },
 		}}>
-			<List>
-				<SidebarListItem component="a" title="Home" icon={<Home />} />
-				<SidebarListItem component="a" title="Pages" icon={<Pages />} />
-				<SidebarListItem component="a" title="Groups" icon={<Group />} />
-				<SidebarListItem component="a" title="Friends" icon={<PersonSearch />} />
-				<SidebarListItem component="a" title="Settings" icon={<Settings />} />
-				<SidebarListItem component="a" title="Profile" icon={<Person />} />
-				
-				<ListItem disablePadding>
-					<ListItemButton component="a">
-						<ListItemIcon>
-							<ModeNight />
-						</ListItemIcon>
-						<Switch />
-					</ListItemButton>
-				</ListItem>
-			</List>
+			<Box position={"fixed"}>
+				<List>
+					<SidebarListItem component="a" title="Home" icon={<Home />} />
+					<SidebarListItem component="a" title="Pages" icon={<Pages />} />
+					<SidebarListItem component="a" title="Groups" icon={<Group />} />
+					<SidebarListItem component="a" title="Friends" icon={<PersonSearch />} />
+					<SidebarListItem component="a" title="Settings" icon={<Settings />} />
+					<SidebarListItem component="a" title="Profile" icon={<Person />} />
+					
+					<ListItem disablePadding>
+						<ListItemButton component="a">
+							<ListItemIcon>
+								<ModeNight />
+							</ListItemIcon>
+							<Switch />
+						</ListItemButton>
+					</ListItem>
+				</List>
+			
+			</Box>
 		</Box>
 	);
 }
