@@ -1,5 +1,5 @@
 import styles from './HeaderNavigation.module.css';
-import { useAuth } from "../hooks/useAuth.ts";
+import { useAuth } from "../../hooks/useAuth.ts";
 
 export function HeaderNavigation() {
 	const { isLoggedIn } = useAuth();
@@ -14,5 +14,5 @@ export function HeaderNavigation() {
 				</nav>
 			)}
 		</header>
-	)
+	);
 }

@@ -1,4 +1,4 @@
-import { useRedirectIfLoggedIn } from "../hooks/useRedirect.ts";
+import { useRedirectIfLoggedIn } from "../../hooks/useRedirect.ts";
 import { LoginForm } from "../ui/login/LoginForm.tsx";
 
 /**
