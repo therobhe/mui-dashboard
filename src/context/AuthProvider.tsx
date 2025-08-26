@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { type JSX, useState } from "react";
 import { AuthContext } from "./AuthContext.ts";
 
 type AuthProviderProps = {
@@ -14,7 +14,7 @@ type AuthProviderProps = {
  * @param {React.ReactNode} props.children - The child components that will have access to the authentication context.
  * @returns {JSX.Element} The `AuthProvider` component wrapping its children with the `AuthContext.Provider`.
  */
-export const AuthProvider = ({ children }: AuthProviderProps) => {
+export const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
 	const [isLoggedIn, setIsLoggedIn] = useState(() => localStorage.getItem("isLoggedIn") === "true");
 	
 	/**

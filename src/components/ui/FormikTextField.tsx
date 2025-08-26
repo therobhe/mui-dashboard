@@ -1,11 +1,11 @@
 import type { TextFieldProps } from "@mui/material";
 import { TextField } from "@mui/material";
 import { useField } from "formik";
+import type { JSX } from "react";
 
 /**
  * Props for the `FormikTextField` component.
  *
- * @typedef {TextFieldProps} FormikTextFieldProps
  * @property {string} name - The name of the field, used to connect with Formik's state.
  * @property {string} label - The label for the text field. Defaults to a capitalized version of the `name` if not provided.
  */

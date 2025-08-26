@@ -1,9 +1,10 @@
 import { Button, CardActions, Grid } from "@mui/material";
-import { useAuth } from "../hooks/useAuth.ts";
+import { useAuth } from "../../hooks/useAuth.ts";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
-import { FormikTextField } from "./FormikTextField.tsx";
+import { FormikTextField } from "../FormikTextField.tsx";
 import { LoginFormLayout } from "./LoginFormLayout.tsx";
+import type { JSX } from "react";
 
 /**
  * Type definition for the form values used in the login form.
