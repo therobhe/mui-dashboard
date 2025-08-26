@@ -32,7 +32,8 @@ export function LoginFormLayout({ children }: LoginFromLayoutProps): JSX.Element
 								display: "flex",
 								flexDirection: "column",
 								alignItems: "center",
-								minHeight: 300
+								minHeight: 300,
+								marginTop: "4rem"
 							}}
 						>
 							<CardContent>

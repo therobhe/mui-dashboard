@@ -2,11 +2,15 @@ import { AppBar, Avatar, Badge, InputBase, Menu, MenuItem, Typography } from "@m
 import { IconContainer, StyledSearch, StyledToolbar, UserBox } from "../StyledComponents.ts";
 import { Mail, Notifications, Pets } from "@mui/icons-material";
 import { useState } from "react";
+import { useAuth } from "../../../hooks/useAuth.ts";
+import { useNavigate } from "react-router-dom";
 
 const AVATAR_IMG = "https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250";
 
 export function Navbar() {
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+	const { logout } = useAuth();
+	const navigate = useNavigate();
 	
 	return (
 		<AppBar position="fixed">
@@ -48,7 +52,10 @@ export function Navbar() {
 			      }}
 			>
 				<MenuItem>My Account</MenuItem> {/*Click on this should toggle a modal with your username and pw */}
-				<MenuItem>Logout</MenuItem> {/*Click on this should trigger logout from useAuth()*/}
+				<MenuItem onClick={() => {
+					logout();
+					navigate("/");
+				}}>Logout</MenuItem> {/*Click on this should trigger logout from useAuth()*/}
 			</Menu>
 		</AppBar>
 	);
