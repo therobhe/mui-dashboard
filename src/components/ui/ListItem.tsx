@@ -2,7 +2,7 @@ import { ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/mater
 import React from "react";
 
 type SidebarListItemProps = {
-	component?: string,
+	component?: React.ElementType,
 	icon: React.ReactNode,
 	title: string,
 	href?: string
