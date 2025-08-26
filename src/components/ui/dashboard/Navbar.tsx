@@ -9,50 +9,54 @@ const AVATAR_IMG = "https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac
 
 export function Navbar() {
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-	const { logout } = useAuth();
+	const { isLoggedIn, logout } = useAuth();
 	const navigate = useNavigate();
-	
+
 	return (
 		<AppBar position="fixed">
 			<StyledToolbar>
 				<Box onClick={() => navigate("/")}
-				     sx={{ cursor: "pointer" }}>
+					sx={{ cursor: "pointer" }}>
 					<Typography variant={"h6"} sx={{ display: { xs: "none", sm: "block" } }}>
 						RobNet
 					</Typography>
 					<ConnectWithoutContact sx={{ display: { xs: "block", sm: "none" } }} />
 				</Box>
-				<StyledSearch>
-					<InputBase placeholder="search..." />
-				</StyledSearch>
-				<IconContainer>
-					<Badge badgeContent={4} color="error">
-						<Mail />
-					</Badge>
-					<Badge badgeContent={1} color="error">
-						<Notifications />
-					</Badge>
-					<Avatar onClick={() => setIsMenuOpen(true)}
-					        src={AVATAR_IMG} />
-				</IconContainer>
-				<UserBox onClick={() => setIsMenuOpen(true)}>
-					<Avatar src={AVATAR_IMG} />
-					<Typography>John</Typography>
-				</UserBox>
+				{isLoggedIn && (
+					<>
+						<StyledSearch>
+							<InputBase placeholder="search..." />
+						</StyledSearch>
+						<IconContainer>
+							<Badge badgeContent={4} color="error">
+								<Mail />
+							</Badge>
+							<Badge badgeContent={1} color="error">
+								<Notifications />
+							</Badge>
+							<Avatar onClick={() => setIsMenuOpen(true)}
+								src={AVATAR_IMG} />
+						</IconContainer>
+						<UserBox onClick={() => setIsMenuOpen(true)}>
+							<Avatar src={AVATAR_IMG} />
+							<Typography>John</Typography>
+						</UserBox>
+					</>
+				)}
 			</StyledToolbar>
-			
+
 			<Menu open={isMenuOpen}
-			      onClose={() => setIsMenuOpen(false)}
-			      id="avatar-menu"
-			      aria-labelledby="Avatar Menu"
-			      anchorOrigin={{
-				      vertical: "top",
-				      horizontal: "right",
-			      }}
-			      transformOrigin={{
-				      vertical: "top",
-				      horizontal: "right",
-			      }}
+				onClose={() => setIsMenuOpen(false)}
+				id="avatar-menu"
+				aria-labelledby="Avatar Menu"
+				anchorOrigin={{
+					vertical: "top",
+					horizontal: "right",
+				}}
+				transformOrigin={{
+					vertical: "top",
+					horizontal: "right",
+				}}
 			>
 				<MenuItem>My Account</MenuItem> {/*Click on this should toggle a modal with your username and pw */}
 				<MenuItem onClick={() => {
