@@ -1,6 +1,6 @@
 # MUI Dashboard RobNet
 
-A responsive SPA using MaterialUI 5 to display a mock social media dashboard page with login form.
+A responsive SPA using MaterialUI 5 to display a mock social media dashboard page after loggin in with a form.
 
 A login is mocked in the local storage to grant access to the dashboard by validating the username and password using Formik and Yup.
 
