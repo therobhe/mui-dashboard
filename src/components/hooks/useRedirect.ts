@@ -12,7 +12,7 @@ import { useAuth } from "./useAuth";
  * @param {string} [redirectPath="/dashboard"] - The path to redirect to if the user is logged in.
  * @returns {boolean} - A boolean indicating whether the redirection check is still in progress.
  */
-export function useRedirectIfLoggedIn(redirectPath: string = "/dashboard") {
+export function useRedirectIfLoggedIn(redirectPath: string = "/dashboard"): boolean {
 	const { isLoggedIn } = useAuth(); // Retrieves the login state from the authentication context.
 	const navigate = useNavigate(); // Provides navigation functionality.
 	const [checking, setChecking] = useState(true); // Tracks whether the redirection check is ongoing.
