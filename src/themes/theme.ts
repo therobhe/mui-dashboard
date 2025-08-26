@@ -1,18 +1,28 @@
 import { createTheme } from "@mui/material";
 
-/**
- * Theme used to create own variable values through the entire palette
- * you must use <ThemeProvider theme={customMaterialUITheme}> and wrap your entire App with it in order to work
- */
-export const customMatierialUITHeme = createTheme({
-	palette: {
-		primary: {
-			main: "#1760a5",
-			light: "skyblue"
-		},
-		secondary: {
-			main: "#15c630",
-			light: "#00BCD4",
+export const getAppTheme = (mode: "light" | "dark") =>
+	createTheme({
+		palette: {
+			mode,
+			primary: {
+				main: "#1760a5",
+				light: "#42a5f5",
+				dark: "#003c6c",
+				contrastText: "#fff"
+			},
+			secondary: {
+				main: "#15c630",
+				light: "#5efc82",
+				dark: "#008b1e",
+				contrastText: "#fff"
+			},
+			background: {
+				default: mode === "light" ? "#f5f5f5" : "#121212",
+				paper: mode === "light" ? "#fff" : "#1e1e1e"
+			},
+			text: {
+				primary: mode === "light" ? "#111" : "#fff",
+				secondary: mode === "light" ? "#333" : "#ccc"
+			}
 		}
-	}
-});
+	});

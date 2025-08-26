@@ -1,21 +1,14 @@
 import { Button, styled } from "@mui/material";
 
-// Creating a Custom Component in Material UI happens with styled(MATERIAL_UI_COMPONENT)({STYLE_OBJECT})
-export const BlueButton = styled(Button)({
-	backgroundColor: "navy",
-	color: '888',
+export const BlueButton = styled(Button)(({ theme }) => ( {
+	backgroundColor: theme.palette.primary.main,
+	color: theme.palette.primary.contrastText,
 	margin: 5,
 	"&:hover": {
-		backgroundColor: "lightblue",
+		backgroundColor: theme.palette.primary.light,
 	},
 	"&:disabled": {
-		backgroundColor: "gray",
-		color: "white",
+		backgroundColor: theme.palette.action.disabled,
+		color: theme.palette.action.disabledBackground,
 	}
-});
-
-// In order to use the values from the theme and override them, you must use {theme} in an arrow function
-/*
-const GreenButton = styled(Button)((customMatierialUITHeme) => {
-	backgroundColor: customMatierialUITHeme.palette.primary.main;
-});*/
+} ));

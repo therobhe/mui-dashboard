@@ -6,7 +6,8 @@ export const StyledToolbar = styled(Toolbar)({
 });
 
 export const StyledSearch = styled("div")(({ theme }) => ( {
-	backgroundColor: "white",
+	backgroundColor: theme.palette.background.paper,
+	color: theme.palette.text.primary,
 	padding: "0 10px",
 	borderRadius: theme.shape.borderRadius,
 	width: "40%"
